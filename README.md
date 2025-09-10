@@ -130,6 +130,7 @@ Users can view and edit their profile at any time.
 ---
 
 👩‍💻 Author
+
 Nidhi Vala
 🌐 GitHub: [https://github.com/NidhiValaa-oss]
 
