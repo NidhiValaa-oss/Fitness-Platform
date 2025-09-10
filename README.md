@@ -72,6 +72,8 @@ With role-specific dashboards, advanced analytics, and a responsive design acces
 git clone https://github.com/NidhiValaa-oss/Fitness-Platform.git
 cd Fitness-Platform
 
+---
+
 2️⃣ Install Backend Dependencies
 cd backend
 npm install
@@ -87,17 +89,23 @@ JWT_SECRET=your_jwt_secret
 Start the backend:
 npm start
 
+---
+
 3️⃣ Install Frontend Dependencies
 cd ../
 npm install
 npm run dev
 The frontend runs at http://localhost:5173 (Vite default).
 
+---
+
 ▶️ Usage
 Register as a User or Trainer.
 Users can set health goals, log workouts & nutrition, track progress, view trainers, manage plans, and chat with trainers.
 Trainers can monitor clients, view progress, chat, and manage the trainer dashboard.
 Users can view and edit their profile at any time.
+
+---
 
 📂 Folder Structure
 fitness-platform copy/
@@ -117,9 +125,13 @@ fitness-platform copy/
 │   └── assets/
 │── README.md          # Project documentation
 
+---
+
 👩‍💻 Author
 Nidhi Vala
 🌐 GitHub: [https://github.com/NidhiValaa-oss]
 💼 LinkedIn: [https://www.linkedin.com/in/nidhi-vala-b04813383]
+
+---
 
 If you found this project helpful, please star ⭐ the repository on GitHub.
