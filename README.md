@@ -67,7 +67,7 @@ With role-specific dashboards, advanced analytics, and a responsive design acces
 
 ## ⚙️ Installation & Setup
 
-1️⃣ **Clone the Repository**
+1️⃣ Clone the Repository
 ```bash
 git clone https://github.com/NidhiValaa-oss/Fitness-Platform.git
 cd Fitness-Platform
