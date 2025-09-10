@@ -69,6 +69,7 @@ With role-specific dashboards, advanced analytics, and a responsive design acces
 
 1️⃣ Clone the Repository
 
+
 git clone https://github.com/NidhiValaa-oss/Fitness-Platform.git
 
 cd Fitness-Platform
@@ -76,6 +77,7 @@ cd Fitness-Platform
 ---
 
 2️⃣ Install Backend Dependencies
+
 
 cd backend
 
@@ -107,6 +109,7 @@ npm start
 
 3️⃣ Install Frontend Dependencies
 
+
 cd ../
 
 npm install
@@ -118,6 +121,7 @@ The frontend runs at http://localhost:5173 (Vite default).
 ---
 
 ▶️ Usage
+
 
 Register as a User or Trainer.
 
@@ -131,7 +135,9 @@ Users can view and edit their profile at any time.
 
 👩‍💻 Author
 
+
 Nidhi Vala
+
 🌐 GitHub: [https://github.com/NidhiValaa-oss]
 
 💼 LinkedIn: [https://www.linkedin.com/in/nidhi-vala-b04813383]
