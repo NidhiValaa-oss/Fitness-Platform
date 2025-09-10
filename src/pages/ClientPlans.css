@@ -1,0 +1,272 @@
+/* src/components/ClientPlans.css */
+
+/* --- Color Variables --- */
+:root {
+  --primary-red: #f66972;
+  --dark-blue: #313864;
+  --yellow: #f7c101;
+  --light-blue: #5ed2eb;
+  --light-gray-bg: #f9fafb;
+  --border-color: #313864;
+}
+
+/* --- General Layout & Typography --- */
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--dark-blue);
+  background-color: var(--light-gray-bg);
+  line-height: 1.6;
+}
+
+.client-plans-container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+/* --- Section Styling --- */
+.plan-section {
+  margin-bottom: 2.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.plan-title-heading {
+  font-size: 1.875rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+  color: var(--dark-blue);
+}
+
+.plan-title-heading.diet::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 60px;
+  height: 3px;
+  background-color: var(--yellow); /* Used a consistent color from the provided palette */
+  border-radius: 2px;
+}
+
+.plan-title-heading.workout::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 60px;
+  height: 3px;
+  background-color: var(--primary-red); /* Used a consistent color from the provided palette */
+  border-radius: 2px;
+}
+
+.no-plan-message {
+  padding: 1.5rem;
+  border: 1px dashed var(--border-color);
+  border-radius: 0.5rem;
+  background-color: #ffffff;
+  color: var(--dark-blue);
+  text-align: center;
+  font-style: italic;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+/* --- Plan Details Card --- */
+.plan-details-card {
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  padding: 1.5rem;
+  background-color: #ffffff;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.plan-details-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.plan-details-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--dark-blue);
+}
+
+.plan-details-card p {
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+  color: var(--dark-blue);
+}
+
+.plan-details-card ul {
+  line-height: 1.6;
+  margin-left: 1.5rem;
+  list-style-type: disc;
+  color: var(--dark-blue);
+}
+
+.plan-details-card ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* --- Custom Utility Classes for Highlights --- */
+.text-highlight-blue {
+  color: var(--light-blue);
+  font-weight: 600;
+}
+
+.text-highlight-red {
+  color: var(--primary-red);
+  font-weight: 600;
+}
+
+/* --- Buttons (Consistent with connection-form) --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.5rem;
+  border-radius: 0.375rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, background-color 0.2s ease-in-out;
+  text-decoration: none;
+  border: 1.5px solid var(--dark-blue);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.btn:hover {
+  transform: translateY(-0.15rem);
+}
+
+.btn-primary {
+  background-color: #ffffff;
+  color: var(--dark-blue);
+}
+
+.btn-primary:hover {
+  background-color: var(--light-gray-bg);
+}
+
+.btn-success {
+  background-color: #ffffff;
+  color: var(--dark-blue); /* Using dark blue for success as green isn't in the palette */
+  border-color: var(--dark-blue);
+}
+.btn-success:hover {
+  background-color: var(--light-gray-bg);
+}
+
+.btn-danger {
+  background-color: #ffffff;
+  color: var(--primary-red);
+  border-color: var(--primary-red);
+}
+.btn-danger:hover {
+  background-color: var(--light-gray-bg);
+}
+
+/* --- Loading/Error/No Data Messages for initial fetch (Consistent) --- */
+.plan-loading-message,
+.plan-error-message,
+.plan-empty-message {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--dark-blue);
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  margin: 2rem auto;
+  max-width: 35rem;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.plan-loading-message {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.plan-error-message {
+  color: var(--primary-red);
+}
+
+.message-icon {
+  font-size: 2rem;
+  color: var(--yellow);
+}
+.plan-error-message .message-icon {
+  color: var(--primary-red);
+}
+
+/* --- Responsive adjustments (Consistent) --- */
+@media (max-width: 768px) {
+  .client-plans-container {
+    padding: 1rem;
+    margin: 1.5rem auto;
+  }
+  .plan-title-heading {
+    font-size: 1.5rem;
+  }
+  .plan-section {
+    padding: 1rem;
+  }
+  .plan-details-card {
+    padding: 1rem;
+  }
+  .btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .plan-title-heading {
+    font-size: 1.3rem;
+  }
+  .plan-section, .plan-details-card {
+    padding: 0.75rem;
+  }
+  .btn {
+    font-size: 0.875rem;
+    padding: 0.6rem 1rem;
+  }
+}
+
+/* --- Unified Error/Loading/Empty Messages (same as Progress Dashboard) --- */
+.error-message,
+.no-data-message,
+.loading-message {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--color-text-dark);
+  background-color: var(--color-card-bg);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  margin: 20px auto;
+  max-width: 500px;
+  border: 1px solid var(--color-border-light);
+}
+
+.error-message {
+  color: var(--color-pink); /* red error */
+}
+
+.loading-message {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}

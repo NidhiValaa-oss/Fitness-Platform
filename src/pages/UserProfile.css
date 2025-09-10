@@ -1,0 +1,169 @@
+/* src/pages/UserProfile.css - Consistent with EditProfile.css */
+
+/* --- Color Variables --- */
+:root {
+  --primary-red: #f66972;
+  --dark-blue: #313864;
+  --yellow: #f7c101;
+  --light-blue: #5ed2eb;
+  --light-gray-bg: #f9fafb;
+  --border-color: #e0e0e0;
+  --success-green: #28a745;
+}
+
+/* --- General Container --- */
+.profile-page-container {
+  background-color: #ffffff;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 
+              0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  max-width: 35rem;
+  margin: 0.5rem auto;
+  box-sizing: border-box;
+}
+
+/* --- Header Section --- */
+.profile-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.profile-avatar-wrapper {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 9999px;
+  background-color: var(--light-blue);
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+}
+
+.profile-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--dark-blue);
+}
+
+.profile-email {
+  font-size: 1rem;
+  color: #6b7280;
+  margin-top: 0.25rem;
+}
+
+/* --- Info Grid --- */
+.info-grid {
+  display: grid;
+  grid-template-columns: auto auto; /* two columns, shrink to content */
+  gap: 2.5rem 15rem;                /* row gap, column gap */
+  margin: 0 auto 2rem;              /* centers the grid in the card */
+  justify-content: center;          /* keeps the grid centered */
+  text-align: center;               /* center text inside each column */
+}
+
+.info-item-label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--dark-blue);
+  margin-bottom: 0.25rem;
+  text-align: center;
+}
+
+.info-item-value {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--dark-blue);
+  text-align: center;
+}
+
+
+/* Stack on small screens */
+@media (max-width: 640px) {
+  .info-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+/* --- Alert Messages (same as Edit Profile) --- */
+.alert-message {
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0;
+  text-align: center;
+}
+
+.alert-success {
+  color: var(--success-green) !important;
+}
+
+.alert-error {
+  color: var(--primary-red) !important;
+}
+
+/* Remove any icons */
+.alert-success::before,
+.alert-success::after,
+.alert-error::before,
+.alert-error::after {
+  content: none !important;
+}
+
+/* --- Buttons --- */
+.edit-profile-button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.edit-profile-button,
+.retry-button {
+  background-color: var(--primary-red);
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.edit-profile-button:hover,
+.retry-button:hover {
+  background-color: #e05e66;
+  transform: translateY(-0.15rem);
+}
+
+/* --- Unified Message Styles --- */
+.loading-message,
+.error-message,
+.no-data-message {
+  text-align: center;
+  padding: 2rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  margin: 2rem auto;
+  max-width: 32rem;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+              0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.message-line1 {
+  font-size: 1.125rem;
+  color: var(--primary-red);
+  margin-bottom: 0.5rem;
+}
+
+.message-line2 {
+  font-size: 1rem;
+  color: var(--dark-blue);
+}

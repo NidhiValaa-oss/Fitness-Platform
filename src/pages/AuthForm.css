@@ -1,0 +1,349 @@
+/* src/pages/AuthForm.css */
+
+.auth-page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* --- Wrapper for the Auth Form Container --- */
+.auth-wrapper {
+  background-image: url('/background.png');
+  background-size: contain;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  flex: 1 0 auto; /* This sets the flex-basis to 'auto' so the content size is respected */
+  min-height: 500px; /* Keep this */
+}
+
+/* --- Auth Form Container Styles --- */
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 385px;
+  width: 100%;
+  padding: 10px 35px;
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border: 2.5px solid #313864;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1;
+}
+
+/* --- Heading (Login/Sign Up) Styles --- */
+.auth-container h2 {
+  font-size: 2.4em;
+  font-weight: 700;
+  color: #313864;
+  margin-bottom: 15px;
+  text-align: center;
+  letter-spacing: 0.5px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* --- Form Element Styles --- */
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+/* --- Input Fields --- */
+.form-input {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 1.05em;
+  color: #313864;
+  border: 1px solid #313864 !important;
+  border-radius: 8px;
+  background-color: #fefefe;
+  transition: border-color 0.3s, box-shadow 0.3s, background-color 0.3s;
+  outline: none;
+  box-sizing: border-box;
+  margin-bottom: 0px !important;
+}
+
+.form-input:focus {
+  border-color: #313864;
+  box-shadow: 0 0 0 4px rgba(49, 56, 100, 0.3);
+  background-color: #fff;
+}
+
+.form-input::placeholder {
+  color: #313864;
+  font-style: normal;
+  opacity: 0.7;
+}
+
+/* --- Radio Button Styling --- */
+input[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 6px 0 0;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #ffff;
+  border: 2.5px solid #313864;
+  position: relative;
+  transition: all 0.25s ease-in-out;
+}
+
+input[type="radio"]:checked {
+  background-color: #313864;
+  border-color: #313864;
+}
+
+input[type="radio"]:checked::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: white;
+  transform: translate(-50%, -50%);
+}
+
+input[type="radio"]:hover {
+  box-shadow: 0 0 0 4px rgba(49, 56, 100, 0.2);
+}
+
+input[type="radio"]:focus {
+  box-shadow: 0 0 0 4px rgba(49, 56, 100, 0.4);
+  outline: none;
+}
+
+.radio-options label {
+  font-size: 1.05em;
+  color: #313864;
+  margin-left: 8px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.radio-group-wrapper {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.radio-options {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+/* --- Error and Success Messages --- */
+.error-text {
+  color: red;
+  font-size: 0.95em;
+  font-weight: 500;
+  text-align: left;
+  min-height: 1.5em;
+  margin: 0;
+}
+
+.success-text {
+  color: #313864;
+  font-size: 1.05em;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 600;
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.center {
+  text-align: center;
+}
+
+/* --- Submit Button --- */
+.submit-btn {
+  padding: 15px 5px;
+  font-size: 1.15em;
+  background-color: #313864;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 8px 25px rgba(49, 56, 100, 0.4);
+  margin-top: 15px;
+}
+
+.submit-btn:hover {
+  background-color: #2a3153;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(49, 56, 100, 0.6);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 5px 15px rgba(49, 56, 100, 0.3);
+}
+
+/* --- Switch Form Link --- */
+.switch-form-text {
+  color: #313864;
+  font-size: 1.05em;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.switch-form-text .form-link {
+  color: #313864;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.switch-form-text .form-link:hover {
+  color: #2a3153;
+}
+
+/* ========================================================= */
+/* Media Queries for Auth Form (Refined for Responsiveness) */
+/* ========================================================= */
+
+/* Tablets and smaller desktops (e.g., max-width 1200px) */
+@media (max-width: 1200px) {
+  .auth-wrapper {
+    padding: 15px;
+    background-size: auto;
+  }
+  .auth-container {
+    padding: 35px 30px;
+    max-width: 380px;
+  }
+  .auth-container h2 {
+    font-size: 2.1em;
+  }
+  .form-input {
+    font-size: 1em;
+    padding: 12px 15px;
+  }
+  .submit-btn {
+    font-size: 1.05em;
+    padding: 14px;
+  }
+  .switch-form-text {
+    font-size: 1em;
+  }
+}
+
+/* Smaller Tablets and larger Mobile devices (e.g., max-width 768px) */
+@media (max-width: 768px) {
+  .auth-wrapper {
+    padding: 15px;
+    background-size: auto;
+  }
+  .auth-container {
+    padding: 30px 25px;
+    max-width: 90%;
+    border-radius: 12px;
+  }
+  .auth-container h2 {
+    font-size: 1.9em;
+  }
+  .form-input {
+    font-size: 0.95em;
+    padding: 10px 12px;
+  }
+  .submit-btn {
+    font-size: 1em;
+    padding: 12px;
+  }
+  .switch-form-text {
+    font-size: 0.95em;
+  }
+  .error-text {
+    font-size: 0.9em;
+    min-height: 1.3em;
+  }
+}
+
+/* Mobile devices (e.g., max-width 480px) */
+@media (max-width: 480px) {
+  .auth-wrapper {
+    padding: 10px;
+    background-size: auto;
+  }
+  .auth-container {
+    padding: 25px 15px;
+    border-radius: 10px;
+    max-width: 100%;
+  }
+  .auth-container h2 {
+    font-size: 1.6em;
+    margin-bottom: 15px;
+  }
+  .form-input {
+    font-size: 0.9em;
+    padding: 10px;
+  }
+  .submit-btn {
+    font-size: 0.95em;
+    padding: 10px;
+  }
+  .switch-form-text {
+    font-size: 0.9em;
+  }
+  .radio-options label {
+    font-size: 0.95em;
+  }
+  input[type="radio"] {
+    width: 18px;
+    height: 18px;
+  }
+  input[type="radio"]:checked::before {
+    width: 9px;
+    height: 9px;
+  }
+  .error-text {
+    font-size: 0.85em;
+    min-height: 1.2em;
+  }
+}
+
+
+

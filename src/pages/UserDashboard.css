@@ -1,0 +1,269 @@
+/* src/UserDashboard.css */
+
+/* ========== Global Reset ========== */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f8f9fa;
+  color: #334155;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* ========== Layout ========== */
+.dashboard-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ========== Dashboard Header ========== */
+.dashboard-header {
+  background-color: white;
+  padding: 1.5rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 60px; /* Leave room for AppHeader (assume AppHeader ~60px) */
+  z-index: 1000;
+  width: 50%;
+  margin: 0 auto;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  transition: width 0.3s ease, margin 0.3s ease;
+}
+
+/* Inner wrapper for content alignment */
+.dashboard-header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 2rem;
+  box-sizing: border-box;
+}
+
+/* Logo Text */
+.logo-text {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #313864;
+  flex-shrink: 0;
+  margin-right: 2rem;
+}
+
+/* Horizontal Nav */
+.header-nav {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  padding: 0.5rem 1rem;
+  color: #475569;
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background-color: #f7c101;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #313864;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link.active {
+  color: #313864;
+  font-weight: 700;
+}
+
+.nav-link.active::after {
+  width: 100%;
+  background-color: #f66972;
+}
+
+/* User Profile */
+.user-profile {
+  font-weight: 600;
+  color: #334155;
+  margin-left: 2rem;
+  flex-shrink: 0;
+}
+
+/* ========== Main Content Area & Card Layout ========== */
+.dashboard-main-content {
+  flex-grow: 1;
+  padding: 2rem;
+  background-color: #f8f9fa;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+
+  /* FIX: prevent overlap with AppHeader + Dashboard Header */
+  padding-top: 10px; /* leaves space for both headers */
+}
+
+.dashboard-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  flex: 1 1 calc(50% - 10px);
+  min-width: 300px;
+  box-sizing: border-box;
+}
+
+.recent-activity-section {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+}
+
+/* Hide elements specific to vertical sidebar */
+.dashboard-sidebar,
+.sidebar-toggle-button,
+.sidebar-close-button {
+  display: none !important;
+}
+
+/* ========== Responsive Fixes ========== */
+
+/* Tablets (<= 1024px) */
+@media (max-width: 1024px) {
+  .dashboard-header {
+    width: 70%;
+    margin: 0 auto;
+    padding: 1rem 0;
+    top: 55px; /* slightly smaller AppHeader space */
+  }
+
+  .dashboard-header-inner {
+    padding: 0 1rem;
+  }
+
+  .dashboard-main-content {
+    padding: 1.5rem;
+    padding-top: 140px; /* adjust for smaller headers */
+  }
+}
+
+/* Mobiles (<= 768px) */
+@media (max-width: 768px) {
+  .dashboard-header {
+    width: 100%; /* Full width for small screens */
+    margin: 0;
+    border-radius: 0;
+    padding: 1rem 0;
+    top: 50px; /* AppHeader smaller on mobile */
+  }
+
+  .dashboard-header-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .header-nav {
+    justify-content: center;
+  }
+
+  .nav-list {
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+
+  .dashboard-main-content {
+    padding: 1rem;
+    width: 100%;
+    padding-top: 120px; /* keeps safe gap below headers */
+  }
+
+  .dashboard-cards {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .card {
+    flex: 1 1 100%;
+    min-width: unset;
+  }
+}
+
+/* Very Small Phones (<= 480px) */
+@media (max-width: 480px) {
+  .logo-text {
+    font-size: 1.4rem;
+    margin-right: 0;
+  }
+
+  .nav-link {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.9rem;
+  }
+
+  .dashboard-main-content {
+    padding: 0.8rem;
+    padding-top: 110px; /* compact safe spacing */
+  }
+}
+
+/* ===== FIX: Make profile dropdown appear above dashboard nav ===== */
+.app-header { 
+  z-index: 3000 !important;   /* App header above dashboard header */
+}
+
+.dashboard-header { 
+  z-index: 2000 !important;   /* Below app header, above page */
+}
+
+.dropdown-container { 
+  position: relative; 
+  z-index: 3100 !important;   /* Host above both headers */
+}
+
+.dropdown-menu { 
+  z-index: 3200 !important;   /* Menu above everything else */
+  margin-top: 6px;            /* small gap from button (optional) */
+}

@@ -1,0 +1,263 @@
+/* AppHeader.css */
+.app-header {
+  background-color: transparent;
+  padding: 0 5vw; /* Use viewport width for flexible padding */
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #313864;
+  gap: 10px;
+}
+
+.logo-image {
+  height: 55px;
+  width: 75px;
+  object-fit: contain;
+}
+
+.app-name {
+  font-size: 25px;
+  font-weight: bold;
+  /* Prevent text from wrapping or becoming too small */
+  white-space: nowrap;
+  min-width: fit-content;
+}
+
+/* Styles for auth buttons (Login/Sign Up) within AppHeader */
+.nav-login-btn {
+  background-color: transparent;
+  color: #313864;
+  font-weight: bold;
+  padding: 5px 15px;
+  font-size: 15px;
+  border-radius: 9999px;
+  border: 2.5px solid #313864;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s, color 0.2s;
+  /* Ensure the button doesn't shrink too much */
+  flex-shrink: 0;
+}
+
+.nav-login-btn:hover {
+  background-color: #313864;
+  color: #ffffff;
+}
+.dashboard-link .item-icon {
+  color: #5ed2eb; /* Light blue accent for dashboard */
+}
+/* The rest of your code remains the same */
+.dropdown-container {
+  position: relative;
+}
+
+.dropdown-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 20px;
+  transition: background-color 0.2s ease;
+  font-size: 1em;
+  color: #313864;
+}
+
+.user-name {
+  margin-right: 10px;
+  font-weight: 500;
+  color: #313864;
+}
+
+.initial-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #5ed2eb;
+  color: #313864;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  margin-right: 8px;
+  font-size: 0.9em;
+}
+
+.chevron-icon {
+  font-size: 0.8em;
+  transition: transform 0.2s ease;
+  color: #313864;
+}
+
+.chevron-icon.rotate {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #ffffff;
+  border: 1px solid #313864;
+  border-radius: 8px;
+  min-width: 180px;
+  z-index: 1001;
+  list-style: none;
+  padding: 0;
+  margin-top: 5px;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  text-align: left;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #313864;
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1em;
+}
+
+.dropdown-item:hover {
+  transform: translateY(-2px);
+}
+
+.dropdown-item .item-icon {
+  margin-right: 10px;
+  color: #f7c101;
+}
+
+.logout-btn {
+  color: #313864;
+}
+
+.logout-btn .item-icon {
+  color: #f7c101;
+}
+
+.delete-account-btn {
+  color: #f66972;
+}
+
+.delete-account-btn .item-icon {
+  color: #f66972;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(49, 56, 100, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.modal-content {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(49, 56, 100, 0.3);
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+}
+
+.modal-title {
+  color: #313864;
+  margin-bottom: 15px;
+  font-size: 1.5em;
+}
+
+.modal-message {
+  color: #313864;
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.modal-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+  color: #ffffff;
+}
+
+.modal-button.confirm {
+  background-color: #f66972;
+}
+
+.modal-button.confirm:hover {
+  background-color: #d15660;
+}
+
+.modal-button.cancel {
+  background-color: #5ed2eb;
+}
+
+.modal-button.cancel:hover {
+  background-color: #45b7cf;
+}
+
+/* Media Queries for AppHeader */
+@media (max-width: 1400px) {
+  .app-header {
+    padding: 0 3vw; /* More flexible padding */
+  }
+}
+
+@media (max-width: 1200px) {
+  .app-header {
+    padding: 0 2vw; /* More flexible padding */
+  }
+}
+
+@media (max-width: 768px) {
+  .app-header {
+    padding: 0 15px; /* Switch to a fixed, small padding for mobile */
+  }
+  .user-name {
+    display: none;
+  }
+}

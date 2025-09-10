@@ -1,0 +1,385 @@
+/* home.css */
+
+.min-h-screen {
+  min-height: 100vh;
+  background-color: white;
+  font-family: sans-serif;
+  overflow-x: hidden; /* Prevent horizontal scrollbar from overflow */
+}
+
+.home-wrapper {
+  margin: 0 125px; /* Default for larger screens */
+ 
+  /* This margin only affects horizontal spacing */
+}
+
+/* Main Section - Image and Navbar */
+.main-section {
+  position: relative; /* Change from relative to absolute */
+  top: 0; /* Start from the top of its containing block (usually body/html) */
+  left: 0;
+  max-height: none;
+  min-height: none;
+  height: auto;
+  display: grid;
+  grid-template-areas: "content";
+  place-items: center;
+  z-index: 1 !important;/* IMPORTANT: Ensure it's lower than .app-header's z-index (1000) */
+  /* THESE TWO PROPERTIES ARE CRUCIAL for making the image go behind the header */
+  margin-top: -60px; /* Pulls the entire main-section UP by the header's height */
+  padding-top: 60px; /* Pushes the *content* (image, text) DOWN by the header's height */
+}
+
+.background-image {
+  width: 100%;
+  height: auto; /* <- allow image to scale naturally */
+  max-height: 100%; /* <- don't exceed parent */
+  object-fit: contain;
+  object-position: center;
+  grid-area: content;
+  border-radius: 10px;
+  z-index: 2; /* Ensure it's above the main-section itself, but still below the header */
+}
+
+/* Overlay Text Block */
+.overlay-text {
+  grid-area: content; /* Assign to the same grid area as the image */
+  align-self: center; /* Vertically center within its grid cell */
+  justify-self: start; /* Align to the start horizontally (left) */
+  color: #5ed2eb;
+  padding: 15px 25px;
+  border-radius: 15px;
+  max-width: 550px;
+  width: 100%; /* Allow to take full width up to max-width */
+  text-align: left;
+  z-index: 5; /* Ensure it's above the image */
+  box-sizing: border-box; /* Include padding in width calculation */
+  margin-left: 0; /* Override any default margin */
+  padding-left: 25px; /* Adjust as needed to align with wrapper content */
+  padding-right: 25px;
+}
+
+.overlay-sub-h {
+  font-size: 35px;
+  font-weight: bold;
+  color: #313864;
+  margin-bottom: -25px;
+}
+
+.overlay-h {
+  font-size: 65px;
+  font-weight: bold;
+  color: #5ed2eb;
+  margin-bottom: -65px;
+}
+
+.overlay-h1 {
+  font-size: 65px;
+  font-weight: bold;
+  color: #f66972;
+  
+}
+
+.overlay-p {
+  font-size: 35px;
+  font-weight: bold;
+  color: #313864;
+  margin-top: -25px;
+}
+
+.overlay-sub-p {
+  font-size: 20px;
+  font-weight: 500;
+  color: #313864;
+  margin-top: -5px;
+}
+
+/* Sections 1 & 2 */
+.section-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 55px 295px; /* Default for larger screens */
+  gap: 10px;
+  flex-wrap: wrap;
+  /* Ensures items wrap on smaller screens */
+}
+
+.section-text {
+  flex: 1;
+  min-width: 300px; /* Give a reasonable min-width for text before wrapping */
+}
+
+.section-text h2 {
+  font-size: 35px;
+  font-weight: bold;
+  color: #f7c101;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.section-text p {
+  font-size: 20px;
+  color: #313864;
+}
+
+.section-image {
+  flex: 1;
+  min-width: 300px;
+  border-radius: 10px; /* Pill shape */
+  border: 2.5px solid #313864; /* Give a reasonable min-width for image before wrapping */
+}
+
+.section-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* ========================================================= */
+/* Media Queries for Responsiveness */
+/* ========================================================= */
+
+/* Tablets and smaller desktops (e.g., max-width 1200px) */
+@media (max-width: 1400px) {
+  .home-wrapper {
+    margin: 0 50px; /* Reduce horizontal margin */
+  }
+
+  .main-section {
+    margin-top: -60px; /* Make sure this matches AppHeader's height */
+    padding-top: 60px; /* Make sure this matches AppHeader's height */
+  }
+
+  .overlay-text {
+    width: calc(100% - (50px * 2)); /* Adjust width based on new wrapper margin */
+    margin-left: 0px; /* Align with new wrapper margin */
+    max-width: 450px; /* Reduce max-width for overlay text */
+  }
+
+  .overlay-sub-h {
+    font-size: 25px;
+    margin-bottom: -15px;
+  }
+
+  .overlay-h{
+    font-size: 55px;
+    margin-bottom: -55px;
+  }
+  .overlay-h1 {
+    font-size: 55px; /* Reduce large headings */
+  }
+
+  .overlay-p {
+    font-size: 25px;
+    margin-top: -15px;
+  }
+
+  .overlay-sub-p {
+    font-size: 18px;
+    margin-top: 0px;
+  }
+
+  .section-container {
+    margin: 25px 100px; /* Adjust section container margin */
+    flex-direction: column; /* Stack sections vertically */
+    text-align: center; /* Center text when stacked */
+  }
+
+  .section-text,
+  .section-image {
+    min-width: unset; /* Remove min-width to allow full width */
+    width: 100%; /* Allow sections to take full width */
+  }
+
+  .section-text h2 {
+    font-size: 30px; /* Reduce section heading size */
+  }
+
+  .section-text p {
+    font-size: 18px; /* Reduce section paragraph size */
+  }
+}
+
+@media (max-width: 1200px) {
+  .home-wrapper {
+    margin: 0 20px; /* Further reduce horizontal margin */
+  }
+
+  .main-section {
+    margin-top: -60px; /* Adjust if header height changes in AppHeader.css */
+    padding-top: 60px; /* Adjust if header height changes in AppHeader.css */
+  }
+
+  .overlay-text {
+    width: calc(100% - (45px * 2)); /* Adjust width based on new wrapper margin */
+    margin-left: 0px; /* Align with new wrapper margin */
+    max-width: 350px; /* Further reduce max-width */
+    padding: 5px 10px; /* Reduce padding */
+  }
+
+  .overlay-sub-h {
+    font-size: 15px;
+    margin-bottom: -15px;
+  }
+  .overlay-h {
+    font-size: 45px;
+    margin-bottom: -45px; 
+  }
+
+  .overlay-h1 {
+    font-size: 45px; /* Significantly reduce large headings */
+  }
+
+  .overlay-p {
+    font-size: 15px;
+    margin-top: -15px;
+  }
+
+  .overlay-sub-p {
+    font-size: 10px;
+    margin-top: 5px;
+  }
+
+  .section-container {
+    margin: 20px; /* Reduce section container margin */
+    gap: 20px; /* Adjust gap */
+  }
+
+  .section-text h2 {
+    font-size: 28px;
+  }
+
+  .section-text p {
+    font-size: 16px;
+  }
+}
+
+/* Smaller Tablets and larger Mobile devices (e.g., max-width 768px) */
+@media (max-width: 768px) {
+  .home-wrapper {
+    margin: 0 20px; /* Further reduce horizontal margin */
+  }
+
+  .main-section {
+    margin-top: -60px; /* Adjust if header height changes in AppHeader.css */
+    padding-top: 60px; /* Adjust if header height changes in AppHeader.css */
+  }
+
+  .overlay-text {
+    width: calc(100% - (20px * 2)); /* Adjust width based on new wrapper margin */
+    margin-left: 0px; /* Align with new wrapper margin */
+    max-width: 275px; /* Further reduce max-width */
+    padding: 5px 10px; /* Reduce padding */
+  }
+
+  .overlay-sub-h {
+    font-size: 10px;
+    margin-bottom: -15px;
+  }
+
+  .overlay-h1 {
+    font-size: 35px; /* Significantly reduce large headings */
+  }
+
+
+  .overlay-h {
+    font-size: 35px;
+    margin-bottom: -45px; /* Adjust margin for h1 */
+  }
+
+  .overlay-p {
+    font-size: 12px;
+    margin-top: -15px;
+  }
+
+  .overlay-sub-p {
+    font-size: 10px;
+    margin-top: 5px;
+  }
+
+  .section-container {
+    margin: 20px; /* Reduce section container margin */
+    gap: 20px; /* Adjust gap */
+  }
+
+  .section-text h2 {
+    font-size: 28px;
+  }
+
+  .section-text p {
+    font-size: 16px;
+  }
+}
+
+/* Mobile devices (e.g., max-width 480px) */
+@media (max-width: 480px) {
+  .home-wrapper {
+    margin: 0 15px; /* Even smaller horizontal margin */
+  }
+
+  .main-section {
+    margin-top: -60px; /* Adjust if header height changes in AppHeader.css */
+    padding-top: 60px; /* Adjust if header height changes in AppHeader.css */
+  }
+
+  .overlay-text {
+    width: calc(100% - (15px * 2)); /* Adjust width based on new wrapper margin */
+    margin-left: 0px; /* Align with new wrapper margin */
+    max-width: unset; /* Allow full width, relying on wrapper margin */
+    padding: 8px 10px; /* Further reduce padding */
+  }
+
+  .overlay-sub-h {
+    font-size: 15px;
+    margin-bottom: -15px;
+  }
+  .overlay-h {
+    font-size: 45px;
+    margin-bottom: -45px; 
+  }
+
+  .overlay-h1 {
+    font-size: 45px; /* Significantly reduce large headings */
+  }
+
+  .overlay-p {
+    font-size: 15px;
+    margin-top: -15px;
+  }
+
+  .overlay-sub-p {
+    font-size: 10px;
+    margin-top: 5px;
+  }
+
+  .section-container {
+    margin: 20px; /* Reduce section container margin */
+    gap: 20px; /* Adjust gap */
+  }
+
+  .section-text h2 {
+    font-size: 28px;
+  }
+
+  .section-text p {
+    font-size: 16px;
+  }
+
+  .section-container {
+    margin: 15px; /* Even smaller section container margin */
+    gap: 15px; /* Adjust gap */
+  }
+
+  .section-text h2 {
+    font-size: 24px;
+  }
+
+  .section-text p {
+    font-size: 15px;
+  }
+}
+
+
+

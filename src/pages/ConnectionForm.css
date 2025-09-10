@@ -1,0 +1,358 @@
+/* src/components/ConnectionForm.css */
+
+/* --- Color Variables (Consistent with EditProfile.css) --- */
+:root {
+  --primary-red: #f66972;
+  --dark-blue: #313864;
+  --yellow: #f7c101;
+  --light-blue: #5ed2eb;
+  --light-gray-bg: #f9fafb;
+  --border-color: #313864;
+  --success-green: #28a745;
+}
+
+/* --- Overlay and Modal Container --- */
+.connection-form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  backdrop-filter: blur(5px);
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.connection-form-modal {
+  background-color: #ffffff;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+              0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  width: 90%;
+  max-width: 35rem; /* Same as EditProfile container */
+  position: relative;
+  animation: fadeInScale 0.3s ease-out forwards;
+  box-sizing: border-box;
+  overflow-y: auto;
+  max-height: 90vh;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* --- Close Button --- */
+.connection-form-close-button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #313864;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  z-index: 2001;
+}
+
+.connection-form-close-button:hover {
+  color: var(--primary-red);
+}
+
+/* --- Form Title --- */
+.connection-form-title {
+  font-size: 1.75rem;
+  line-height: 2rem;
+  font-weight: 800;
+  text-align: center;
+  color: var(--dark-blue);
+  margin-bottom: 1.5rem;
+}
+
+/* --- Form Fields --- */
+.connection-form-group {
+  margin-bottom: 0.75rem;
+}
+
+.connection-form-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--dark-blue);
+  margin-bottom: 0.5rem;
+}
+
+.connection-form-input,
+.connection-form-textarea {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--dark-blue);
+  background-color: #fff;
+  transition: border-color 0.2s ease;
+}
+
+.connection-form-input[readonly] {
+  background-color: #fff;
+  border: 1px solid var(--border-color);
+  color: var(--dark-blue);
+  opacity: 1;
+}
+
+/* ✅ Fixed: Remove browser blue glow, keep custom border */
+.connection-form-input:focus,
+.connection-form-textarea:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: var(--border-color) !important;
+}
+
+.connection-form-textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* --- Checkbox Grid for Goals --- */
+.goals-checkbox-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+  background-color: transparent;
+  padding: 0;
+  border: none;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  user-select: none;
+}
+
+.checkbox-item input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 8px;
+  position: relative;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+/* Checked state */
+.checkbox-item input[type="checkbox"]:checked {
+  background-color: var(--dark-blue);
+  border-color: var(--dark-blue);
+}
+
+.checkbox-item input[type="checkbox"]:checked::after {
+  content: '\2713';
+  font-size: 14px;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* ✅ Fixed: remove sky blue border/glow */
+.checkbox-item input[type="checkbox"]:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: var(--border-color) !important;
+}
+
+.checkbox-item label {
+  font-size: 0.95rem;
+  color: var(--dark-blue);
+  cursor: pointer;
+  flex-grow: 1;
+}
+
+/* --- Submit and Cancel Buttons --- */
+.connection-form-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.connection-form-submit-button,
+.connection-form-cancel-button {
+  font-weight: 700;
+  padding: 0.6rem 1.5rem;
+  border-radius: 0.375rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+              0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition-property: background-color, transform;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(0);
+  font-size: 1rem;
+  border: 1.5px solid var(--dark-blue);
+  cursor: pointer;
+}
+
+.connection-form-submit-button {
+  background-color:#ffff;
+  color: #313864;
+}
+
+.connection-form-submit-button:hover {
+  background-color: #ffffff;
+  transform: translateY(-0.15rem);
+}
+
+.connection-form-cancel-button {
+  background-color: #ffffff;
+  color: var(--dark-blue);
+}
+
+.connection-form-cancel-button:hover {
+  background-color: #ffffff;
+  transform: translateY(-0.15rem);
+}
+
+.connection-form-submit-button:disabled,
+.connection-form-cancel-button:disabled {
+  background-color: #e0e0e0;
+  color: #313864;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+/* --- Error and Success Messages --- */
+.connection-form-message {
+  font-size: 0.95rem;
+  margin: 10px 0;
+  padding: 0;
+  border: none !important;
+  background: none !important;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Error message in red */
+.connection-form-error {
+  color: var(--primary-red) !important;
+}
+
+/* Success message in dark blue */
+.connection-form-success {
+  color: var(--dark-blue) !important;
+}
+
+/* --- Loading/Error/No Data Messages --- */
+.connection-loading-message,
+.connection-error-message {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--dark-blue);
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+              0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  margin: 2rem auto;
+  max-width: 35rem;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.connection-loading-message {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.connection-error-message {
+  color: var(--primary-red);
+}
+
+.message-icon {
+  font-size: 2rem;
+  color: var(--yellow);
+}
+.connection-error-message .message-icon {
+  color: var(--primary-red);
+}
+
+/* Enlarged Error Box */
+.connection-error-message {
+  color: var(--primary-red);
+  width: 375px;     /* wider */
+  min-height: 215px; /* taller */
+  position: relative;
+  justify-content: center;
+}
+
+/* Close "X" icon */
+.connection-error-close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-size: 22px;
+  background: none;
+  border: none;
+  color: var(--primary-red);
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .connection-form-modal {
+    padding: 1rem;
+  }
+  .connection-form-title {
+    font-size: 1.5rem;
+  }
+  .connection-form-input,
+  .connection-form-textarea {
+    padding: 0.6rem 0.75rem;
+  }
+  .goals-checkbox-grid {
+    flex-direction: column;
+  }
+  .connection-form-buttons {
+    flex-direction: column-reverse;
+    gap: 10px;
+  }
+  .connection-form-submit-button,
+  .connection-form-cancel-button {
+    width: 100%;
+    padding: 0.8rem 1.5rem;
+  }
+}
+

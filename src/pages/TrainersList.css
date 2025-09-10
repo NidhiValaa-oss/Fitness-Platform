@@ -1,0 +1,101 @@
+:root {
+  --color-pink: #F66972;          /* Primary Red */
+  --color-dark-blue: #313864;     /* Dark Blue */
+  --color-yellow: #F7C101;
+  --color-light-blue: #5ED2EB;
+
+  --color-card-bg: #ffffff;
+  --color-border-light: #e0e0e0;
+}
+
+/* Container */
+.trainers-list-container {
+  padding: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.trainers-list-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--color-dark-blue);
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+/* Trainers Grid */
+.trainers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.trainer-card {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border-light);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease-in-out;
+}
+
+.trainer-card:hover {
+  transform: translateY(-5px);
+}
+
+.trainer-card-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--color-dark-blue);
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.trainer-card p {
+  font-size: 0.95rem;
+  margin: 6px 0;
+  color: #333;
+  text-align: center;
+}
+
+/* Connect Button */
+.connect-button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: var(--color-pink);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease-in-out;
+}
+
+.connect-button:hover {
+  background-color: #d95562;
+}
+
+/* Info Messages (loading, error, no data) */
+.info-message {
+  text-align: center;
+  font-size: 1.1rem;
+  background-color: var(--color-card-bg);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  margin: 20px auto;
+  max-width: 500px;
+  border: 1px solid var(--color-border-light);
+}
+
+.message-line1 {
+  color: var(--color-pink); /* red */
+  margin-bottom: 10px;
+}
+
+.message-line2 {
+  color: var(--color-dark-blue); /* blue */
+}
+
+
+

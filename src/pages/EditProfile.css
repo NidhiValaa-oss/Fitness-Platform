@@ -1,0 +1,207 @@
+/* src/pages/EditProfile.css - Final Clean Version */
+
+/* --- Color Variables (Consistent with UserProfile.css) --- */
+:root {
+  --primary-red: #f66972;
+  --dark-blue: #313864;
+  --yellow: #f7c101;
+  --light-blue: #5ed2eb;
+  --light-gray-bg: #f9fafb;
+  --border-color: #e0e0e0;
+  --success-green: #28a745;
+}
+
+/* --- General Container --- */
+.edit-profile-container {
+  background-color: #ffffff;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 
+              0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  max-width: 35rem;
+  margin: 2rem auto;
+  box-sizing: border-box;
+}
+
+.edit-profile-title {
+  font-size: 1.75rem;
+  line-height: 2rem;
+  font-weight: 800;
+  text-align: center;
+  color: var(--dark-blue);
+  margin-bottom: 1.5rem;
+}
+
+/* --- Loading State --- */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  text-align: center;
+  color: var(--dark-blue);
+}
+
+.loading-spinner {
+  animation: spin 1s linear infinite;
+  border-radius: 9999px;
+  height: 3rem;
+  width: 3rem;
+  border-top: 3px solid var(--light-blue);
+  border-bottom: 3px solid var(--light-blue);
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  margin-bottom: 0;
+}
+
+.loading-text {
+  font-size: 2.5rem;
+  color: var(--dark-blue);
+  margin-top: 0.75rem;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* --- Alert Messages (Only text, centered) --- */
+.alert-message {
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0;
+  text-align: center; /* Center align text */
+}
+
+/* Success = green text */
+.alert-success {
+  color: var(--success-green) !important;
+  text-align: center;
+}
+
+/* Error = red text */
+.alert-error {
+  color: var(--primary-red) !important;
+  text-align: center;
+}
+
+/* Remove any icons */
+.alert-success::before,
+.alert-success::after,
+.alert-error::before,
+.alert-error::after {
+  content: none !important;
+  background: none !important;
+}
+
+/* --- Form Styles --- */
+.edit-profile-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 0.75rem;
+}
+
+/* All labels (Name, Phone, Age, Gender) dark blue */
+.form-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--dark-blue) !important; 
+  margin-bottom: 0.5rem;
+}
+
+/* --- Input & Select Styling (all fields same color) --- */
+.form-input,
+.form-select,
+input[type="text"],
+input[type="tel"],
+input[type="number"],
+select {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color); 
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--dark-blue) !important;
+  background-color: #fff;
+  transition: border-color 0.2s ease;
+}
+
+/* --- Placeholder Text (dark blue) --- */
+.form-input::placeholder,
+input[type="text"]::placeholder,
+input[type="tel"]::placeholder,
+input[type="number"]::placeholder {
+  color: var(--dark-blue);
+  opacity: 0.7;
+}
+
+/* --- Dropdown Options in Blue --- */
+select option {
+  color: var(--dark-blue);
+  background-color: #fff;
+}
+
+/* Readonly inputs look same */
+.form-input[readonly] {
+  background-color: #fff;
+  border: 1px solid var(--border-color); 
+  color: var(--dark-blue); 
+  opacity: 1;
+}
+
+/* --- Remove blue glow on all fields including Gender select --- */
+.form-input:focus,
+.form-select:focus,
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="number"]:focus,
+select:focus {
+  outline: none !important;
+  border-color: var(--light-blue); 
+  box-shadow: none !important;
+}
+
+/* --- Age (number input) spinner cleanup --- */
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: auto;
+  text-align: left;
+}
+
+/* --- Submit Button --- */
+.submit-button-container {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.submit-button {
+  background-color: var(--primary-red);
+  color: #ffffff;
+  font-weight: 700;
+  padding: 0.6rem 1.5rem;
+  border-radius: 0.375rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 
+              0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition-property: background-color, transform;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(0);
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #e05e66;
+  transform: translateY(-0.15rem);
+}
