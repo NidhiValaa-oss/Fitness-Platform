@@ -58,7 +58,7 @@ export default function Home() {
       <div className="section-container">
         <div className="section-image">
           <img
-            src="./Picture1.png"
+            src="./Picture2.png"
             alt="screenshot of application"
           />
         </div>
