@@ -1,6 +1,6 @@
 # 🏋️‍♀️ Online Fitness Coaching and Progress Tracking Platform
 
-The **Online Fitness Coaching and Progress Tracking Platform** is a comprehensive web-based solution that connects fitness enthusiasts with certified trainers and delivers personalized, goal-oriented programs. It enables users to create detailed profiles, set health objectives, follow tailored workout and nutrition plans, and track progress through intuitive dashboards and analytics. Trainers can manage multiple clients, monitor progress via logged workouts and health metrics, and provide real-time guidance through integrated chat and media sharing tools.  
+The **Online Fitness Coaching and Progress Tracking Platform** is a comprehensive web-based solution that connects fitness enthusiasts with certified trainers and delivers personalized, goal-oriented programs. It enables users to create detailed profiles, set health objectives, follow tailored workout and nutrition plans, and track progress through intuitive dashboards and analytics. Trainers can manage multiple clients, monitor progress via logged workouts and health metrics, and provide real-time guidance through integrated chat and media sharing tools.
 
 With role-specific dashboards, advanced analytics, and a responsive design accessible across devices, the platform ensures seamless interaction, improved accountability, and consistent progress. It is scalable for gyms, freelance coaches, and wellness startups, offering a unified, flexible, and results-driven digital fitness experience.
 
@@ -67,70 +67,16 @@ With role-specific dashboards, advanced analytics, and a responsive design acces
 
 ## ⚙️ Installation & Setup
 
-1️⃣ Clone the Repository
+### 1️⃣ Clone the Repository
+```bash
 git clone https://github.com/NidhiValaa-oss/Fitness-Platform.git
 cd Fitness-Platform
 
----
-
 2️⃣ Install Backend Dependencies
+```bash
 cd backend
 npm install
 
 Create a .env file inside backend/:
-PORT=5000
-DB_HOST=localhost
-DB_USER=root
-DB_PASSWORD=yourpassword
-DB_NAME=fitness_platform
-JWT_SECRET=your_jwt_secret
 
-Start the backend:
-npm start
 
----
-
-3️⃣ Install Frontend Dependencies
-cd ../
-npm install
-npm run dev
-The frontend runs at http://localhost:5173 (Vite default).
-
----
-
-▶️ Usage
-Register as a User or Trainer.
-Users can set health goals, log workouts & nutrition, track progress, view trainers, manage plans, and chat with trainers.
-Trainers can monitor clients, view progress, chat, and manage the trainer dashboard.
-Users can view and edit their profile at any time.
-
----
-
-📂 Folder Structure
-fitness-platform copy/
-│── backend/           # Node.js + Express.js API
-│   ├── middleware/
-│   ├── node_modules/
-│   ├── .env
-│   ├── package.json
-│   └── server.js
-│── public/            # Screenshots & images
-│   ├── Picture1.png
-│   ├── Picture2.png
-│   └── ...
-│── src/               # React frontend source code
-│   ├── components/
-│   ├── pages/
-│   └── assets/
-│── README.md          # Project documentation
-
----
-
-👩‍💻 Author
-Nidhi Vala
-🌐 GitHub: [https://github.com/NidhiValaa-oss]
-💼 LinkedIn: [https://www.linkedin.com/in/nidhi-vala-b04813383]
-
----
-
-If you found this project helpful, please star ⭐ the repository on GitHub.
