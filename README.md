@@ -28,40 +28,40 @@ With role-specific dashboards, advanced analytics, and a responsive design acces
 ---
 
 ## 📸 Screenshots
-*(Screenshots should be saved in `assets/screenshots/` folder)*  
+*(Screenshots are saved in `public/assets/screenshots/` folder)*  
 
 ### 🏠 Home Page
-![Home Page](assets/screenshots/Picture1.png)
+![Home Page](public/assets/screenshots/Picture1.png)
 
 ### 🔐 Login Page
-![Login Screenshot](assets/screenshots/Picture2.png)
+![Login Screenshot](public/assets/screenshots/Picture2.png)
 
 ### ✍️ Sign Up Page
-![Sign Up Screenshot](assets/screenshots/Picture3.png)
+![Sign Up Screenshot](public/assets/screenshots/Picture3.png)
 
 ### 📊 User Dashboard
-![User Dashboard Screenshot](assets/screenshots/Picture4.png)
+![User Dashboard Screenshot](public/assets/screenshots/Picture4.png)
 
 ### ➕ Add Progress
-![Add Progress Screenshot](assets/screenshots/Picture5.png)
+![Add Progress Screenshot](public/assets/screenshots/Picture5.png)
 
 ### 👀 View Trainers
-![View Trainers Screenshot](assets/screenshots/Picture6.png)
+![View Trainers Screenshot](public/assets/screenshots/Picture6.png)
 
 ### 📋 Your Plans
-![Your Plans Screenshot](assets/screenshots/Picture7.png)
+![Your Plans Screenshot](public/assets/screenshots/Picture7.png)
 
 ### 💬 Chat with Trainers
-![Chat Screenshot](assets/screenshots/Picture8.png)
+![Chat Screenshot](public/assets/screenshots/Picture8.png)
 
 ### 👤 View Profile
-![View Profile Screenshot](assets/screenshots/Picture10.png)
+![View Profile Screenshot](public/assets/screenshots/Picture10.png)
 
 ### 👤 Edit Profile
-![Edit Profile Screenshot](assets/screenshots/Picture11.png)
+![Edit Profile Screenshot](public/assets/screenshots/Picture11.png)
 
 ### 🎯 Trainer Dashboard
-![Trainer Dashboard Screenshot](assets/screenshots/Picture12.png)
+![Trainer Dashboard Screenshot](public/assets/screenshots/Picture12.png)
 
 ---
 
